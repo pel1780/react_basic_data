@@ -1,0 +1,41 @@
+@import './common';
+@import './basic';
+
+.Header {
+    margin-bottom: 50px;
+
+    h1 {
+        text-align: center;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 100px;
+    }
+
+    nav {
+        @include inner;
+
+        ul {
+            @include row;
+            justify-content: space-between;
+        }
+    }
+}
+
+#map {
+    margin-bottom: 30px
+}
+
+.list {
+    @include row($display: grid, $gap: 10px);
+    grid-template-columns: repeat(6, 1fr);
+
+
+}
+
+.itm {
+
+    .case {
+        @include inner;
+        @include row;
+    }
+}

@@ -1,0 +1,90 @@
+// variable
+$maincolor: rgb(75, 216, 181);
+$rgba_bg: rgba(255, 255, 255, 0.6);
+$pc_w: 1440px;
+$mo_w: 768px;
+$m_border: 1px solid #ddd;
+
+// mixin
+
+@mixin sec {
+    padding: 100px 0;
+}
+
+@mixin detail {
+    padding: 180px 0 100px 0;
+}
+
+@mixin inner {
+    width: $pc_w;
+    margin: 0 auto;
+}
+
+@mixin btn {
+    background: transparent;
+    border: none;
+    outline: none;
+    line-height: 1;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+@mixin row ($display: flex, $gap: auto) {
+    display: $display;
+    gap: $gap;
+}
+
+@mixin position($position, $inset, $tranX, $tranY, $zindex) {
+    position: $position;
+    inset: $inset;
+    transform: translate($tranX, $tranY);
+    z-index: $zindex;
+}
+
+@mixin event_op($opacity, $visibiliy) {
+    opacity: $opacity;
+    visibility: $visibiliy;
+}
+
+@mixin img($height) {
+    object-fit: cover;
+    width: 100%;
+    height: $height;
+}
+
+@mixin itm($height) {
+    .imgCase {
+        padding: 10px;
+        margin-bottom: 30px;
+
+        img {
+            @include img($height);
+        }
+    }
+}
+
+@mixin dots {
+    margin-top: 10px;
+    text-align: center;
+
+    li {
+        display: inline-block;
+        margin: 0 4px;
+        background: #ddd;
+
+        border-radius: 50%;
+
+        &.slick-active {
+            background: $maincolor;
+        }
+
+        button {
+            @include btn;
+            display: block;
+            width: 15px;
+            height: 15px;
+            font-size: 0;
+            padding: 0;
+        }
+    }
+}
